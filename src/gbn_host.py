@@ -224,7 +224,7 @@ class GBNHost:
             return None
         packet_type = struct.unpack("!H", packet[:2])[0]
         # Do not construct an IntEnum for an unknown value; callers use None
-        # to distinguish an unrecognized protocol message from bad DATA.
+        # to distinguish an unrecognized protocol message from bad DATA
         return PacketType(packet_type) if packet_type in PacketType._value2member_map_ else None
 
     def _fill_window(self):
